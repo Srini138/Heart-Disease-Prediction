@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Heart Disease Prediction</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+	body{
+		font-family: Timesnewroman;
+		background-image: url({{ url_for('static', filename='output.jpg') }});
+		height: 100%; 
+ 		background-position: center;
+  		background-repeat: no-repeat;
+  		background-size: cover;
+	}
+	div.card {
+ 	width: 700px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  	text-align: center;
+  	margin: 0 auto;
+    float: none;
+    margin-bottom: 10px
+
+	}
+
+	div.header {
+  	background-color: #e2e2e2;
+  	color: black;
+  	padding: 12px;
+  	font-size: 32px;
+	}
+
+	div.container {
+  	padding: 10px;
+  	font-size:18px;
+  	text-align: left;
+  	color: black;
+	}
+	h5{
+		font-size: 28px;
+	}
+	h6{
+		font-size: 12px;
+		color: black;
+	}
+</style>
+<body>
+	<div class="col-md-12 text-center">
+  		<h2>Predicted Result</h2>
+	</div>
+		<div class="card">
+  			<div class="header">
+    			{% if data == 0 %}
+            		<h5>Your not affected by Heart Disease</h5>
+        		{% elif data == 1 %}
+            		<h5>Your affected by Heart Disease</h5>
+        		{% else %}
+            		<p></p>
+        		{% endif %}
+  			</div>
+
+  			<div class="container">
+  				{% if data == 1 %}
+					<h6="bold">There are many things you can do to reduce your chances of getting heart disease:</h6>
+					<ul>
+					<li>Control your blood pressure.</li>
+					<li>Keep your cholesterol and triglyceride levels under control.</li>
+					<li>Stay at a healthy weight.</li>
+					<li>Eat a healthy diet.</li>
+					<li>Get regular exercise.</li>
+					<li>No alcohol.</li> 
+					<li>Don't smoke.</li>
+					<li>Manage stress.</li>
+					<li>Manage diabetes.</li>
+					<li>Make sure that you get enough sleep.</li>
+					</ul>
+				{% else %}
+					<h6="bold">There are many things you can do to reduce your chances of getting heart disease:</h6>
+					<ul>
+					<li>Control your blood pressure.</li>
+					<li>Keep your cholesterol and triglyceride levels under control.</li>
+					<li>Stay at a healthy weight.</li>
+					<li>Eat a healthy diet.</li>
+					<li>Get regular exercise.</li>
+					<li>No alcohol.</li> 
+					<li>Don't smoke.</li>
+					<li>Manage stress.</li>
+					<li>Manage diabetes.</li>
+					<li>Make sure that you get enough sleep.</li>
+					</ul>
+				{% endif %}
+
+  			</div>
+		</div>
+		<button class="btn-btn-primary btn-lg" onclick="history.back()" id="backward">Go Back</button>
+</body>
+</html>
