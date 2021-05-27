@@ -109,11 +109,11 @@ def home():
         ca_3=0
         ca_4=0
     thal_1=request.form['thal']
-    if(thal_1=='Normal'):
+    if(thal_1=='Fixed Defect'):
         thal_1=1
         thal_2=0
         thal_3=0
-    elif(thal_1=='Fixed Defect'):
+    elif(thal_1=='Reversible Defect'):
         thal_1=0
         thal_2=1
         thal_3=0
